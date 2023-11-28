@@ -1,0 +1,63 @@
+% Facts representing parent-child relationships
+parent(john, bob).
+parent(john, alice).
+parent(alice, carol).
+parent(bob, david).
+
+% Rules to define the ancestor relationship
+ancestor(X, Y) :- parent(X, Y).
+ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).
+
+
+% Query 1: Who are the children of John?
+?- parent(john, Child).
+
+% Query 2: Who is the parent of Alice?
+?- parent(Parent, alice).
+
+% Query 3: Who are the ancestors of David?
+?- ancestor(Ancestor, david
+
+
+
+
+a. Create a List:
+In Prolog, lists are represented using square brackets. Here's an example of a list:
+
+prolog
+Copy code
+myList([1, 2, 3, 4, 5]).
+
+b. Check Membership:
+You can check if an element is a member of a list using the member/2 predicate. Here's an example:
+
+prolog
+Copy code
+% Check if 3 is a member of the list
+?- member(3, [1, 2, 3, 4, 5]).
+% This will succeed.
+
+c. Calculate Length:
+You can calculate the length of a list using the built-in length/2 predicate. Here's an example:
+
+prolog
+Copy code
+% Calculate the length of the list
+?- length([1, 2, 3, 4, 5], Len).
+
+
+
+Putting it all together:
+
+prolog
+Copy code
+% Creating a list
+myList([1, 2, 3, 4, 5]).
+
+% Checking membership
+?- member(3, [1, 2, 3, 4, 5]).
+% This will succeed.
+
+% Calculating length
+?- length([1, 2, 3, 4, 5], Len).
+% Len will be unified with 5.
